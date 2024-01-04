@@ -12,9 +12,10 @@ function rollDice() {
 
 
     // Randomise player one dice
-    const image1 = document.querySelectorAll("img") [0]; // selects all image tag and then chooses the first on the index
+    const image1 = document.querySelectorAll("img") [0]; 
+    // 👆 this selects all image tags and then chooses the first [index 0]
 
-    // Now target the attribute of image1 and change it's image
+    // Now target the attribute - src  of image1 and change set the image to random
     image1.setAttribute("src", randomImageSource);
 
 
@@ -26,7 +27,8 @@ function rollDice() {
 
     // Let's randomise player two
 
-    const image2 = document.querySelectorAll("img") [1]; // select element
+    const image2 = document.querySelectorAll("img") [1]; 
+    // 👆 this selects image tag [index 1] 
 
     // Now set element
     image2.setAttribute("src", randomDice2);
@@ -34,13 +36,13 @@ function rollDice() {
 
     // Who wins?
     if (randomNumber1 > randomNumber2) {
-        document.querySelector("h1").innerHTML = "😎 Player one wins";
-        document.querySelector("h1").style.color = "#fefae0";
-        document.body.style.backgroundColor = "#14213d";
-        document.querySelectorAll("p")[0].style.color = "#fefae0";
-        document.querySelectorAll("p")[0].style.textShadow = '0 0 30px #fefae0';
+        document.querySelector("h1").innerHTML = "😎 Player one wins"; // Change h1 text
+        document.querySelector("h1").style.color = "#fefae0"; // Change h1 color
+        document.body.style.backgroundColor = "#14213d"; // Change page background color
+        document.querySelectorAll("p")[0].style.color = "#fefae0"; // Change the text color like h1
+        document.querySelectorAll("p")[0].style.textShadow = '0 0 30px #fefae0'; // Add a glow to the text
     
-        // Reset styles for the other paragraph
+        // Reset styles for the other paragraph for every refresh
         document.querySelectorAll("p")[1].style.color = "";
         document.querySelectorAll("p")[1].style.textShadow = '';
     }
@@ -59,6 +61,7 @@ function rollDice() {
         document.querySelector("h1").innerHTML = "Draw! 🤝";
     
         // Reset styles for both paragraphs in case of a draw
+        document.body.style.backgroundColor = "#393E46";
         document.querySelectorAll("p")[0].style.color = "";
         document.querySelectorAll("p")[0].style.textShadow = '';
         document.querySelectorAll("p")[1].style.color = "";
